@@ -1,0 +1,12 @@
+{
+  "itemGroup.rehurttime": "Example Mod Tab",
+  "block.rehurttime.example_block": "Example Block",
+  "item.rehurttime.example_item": "Example Item",
+  "rehurttime.configuration.title": "ReHurtTime Configs",
+  "rehurttime.configuration.section.rehurttime.common.toml": "ReHurtTime Configs",
+  "rehurttime.configuration.section.rehurttime.common.toml.title": "ReHurtTime Configs",
+  "rehurttime.configuration.items": "Item List",
+  "rehurttime.configuration.logDirtBlock": "Log Dirt Block",
+  "rehurttime.configuration.magicNumberIntroduction": "Magic Number Text",
+  "rehurttime.configuration.magicNumber": "Magic Number"
+}
