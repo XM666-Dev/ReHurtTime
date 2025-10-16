@@ -4,7 +4,9 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.Set;
@@ -54,5 +56,27 @@ public class Util {
             return holder.tags().map(TagKey::location).map(ResourceLocation::toString).collect(Collectors.toSet());
         }
         return Set.of();
+    }
+
+    public static String getSourceType(DamageSource source) {
+        if (source != null) {
+            return getHolderType(source.typeHolder());
+        }
+        return "";
+    }
+
+    public static Set<String> getSourceTags(DamageSource source) {
+        if (source != null) {
+            return getHolderTags(source.typeHolder());
+        }
+        return Set.of();
+    }
+
+    public static Object execute(String expression, LivingEntity entity, DamageSource source) {
+        return PredicateUtil.execute(expression, "entity", entity, "source", source);
+    }
+
+    public static boolean test(String expression, LivingEntity entity, DamageSource source) {
+        return (boolean) execute(expression, entity, source);
     }
 }

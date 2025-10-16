@@ -1,0 +1,19 @@
+{
+  "rehurttime.configuration.title": "伤害免疫机制重做 配置",
+  "rehurttime.configuration.section.rehurttime.common.toml": "常规设置",
+  "rehurttime.configuration.section.rehurttime.common.toml.title": "常规设置",
+  "rehurttime.configuration.section.rehurttime.startup.toml": "注入设置",
+  "rehurttime.configuration.section.rehurttime.startup.toml.title": "注入设置",
+  "rehurttime.configuration.bypassesInvulnerabilityEnabled": "启用绕过免疫",
+  "rehurttime.configuration.bypassesInvulnerabilityEnabled.tooltip": "是否启用绕过无敌时间的机制。",
+  "rehurttime.configuration.bypassesInvulnerabilityPredicate": "绕过免疫条件",
+  "rehurttime.configuration.bypassesInvulnerabilityPredicate.tooltip": "定义哪些类型的伤害可以绕过无敌时间。\n有关可用表达式 API 的详细信息，请参阅配置文件。",
+  "rehurttime.configuration.appliesKnockbackEnabled": "启用应用击退",
+  "rehurttime.configuration.appliesKnockbackEnabled.tooltip": "是否允许绕过无敌时间的伤害造成击退效果。",
+  "rehurttime.configuration.appliesKnockbackPredicate": "应用击退条件",
+  "rehurttime.configuration.appliesKnockbackPredicate.tooltip": "定义哪些类型的伤害在绕过无敌时间时仍然可以造成击退。\n有关可用表达式 API 的详细信息，请参阅配置文件。",
+  "rehurttime.configuration.logEnabled": "启用日志输出",
+  "rehurttime.configuration.logEnabled.tooltip": "输出详细的伤害信息到日志，用于调试。",
+  "rehurttime.configuration.logFunction": "日志输出格式",
+  "rehurttime.configuration.logFunction.tooltip": "此表达式决定日志输出的内容，可返回一个 HashMap 以自定义输出格式。\n有关可用表达式 API 的详细信息，请参阅配置文件。"
+}

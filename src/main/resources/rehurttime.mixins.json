@@ -1,9 +1,11 @@
 {
   "required": true,
   "package": "com.xm666.rehurttime.mixin",
+  "plugin": "com.xm666.rehurttime.MixinConfigPlugin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "HurtTimeMixin"
+    "AppliesKnockbackMixin$LivingEntityMixin",
+    "BypassesInvulnerabilityMixin$LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
