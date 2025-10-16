@@ -2,6 +2,8 @@ package com.xm666.rehurttime.util;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 
@@ -32,7 +34,7 @@ public class Util {
 
     public static Set<String> getItemTags(ItemStack stack) {
         if (stack != null) {
-            return stack.getTags().map(tag -> tag.location().toString()).collect(Collectors.toSet());
+            return stack.getTags().map(TagKey::location).map(ResourceLocation::toString).collect(Collectors.toSet());
         }
         return Set.of();
     }
@@ -49,7 +51,7 @@ public class Util {
 
     public static Set<String> getHolderTags(Holder<?> holder) {
         if (holder != null) {
-            return holder.tags().map(tag -> tag.location().toString()).collect(Collectors.toSet());
+            return holder.tags().map(TagKey::location).map(ResourceLocation::toString).collect(Collectors.toSet());
         }
         return Set.of();
     }

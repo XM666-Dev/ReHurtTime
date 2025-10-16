@@ -143,8 +143,6 @@ dependencies {
         }
     }
 
-    // This is still required to add the library at compile time
-    implementation 'com.googlecode.aviator:aviator:5.4.3'
     // This adds the library to all the runs
     additionalRuntimeClasspath 'com.googlecode.aviator:aviator:5.4.3'
 }
