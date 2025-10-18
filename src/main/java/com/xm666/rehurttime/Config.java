@@ -24,7 +24,7 @@ public class Config {
             .define("bypassesInvulnerabilityPredicate", "getEntityType(entity) != 'minecraft:player' && !include(getSourceTags(source), 'neoforge:is_environment')");
 
     public static final ModConfigSpec.ConfigValue<String> APPLIES_KNOCKBACK_PREDICATE = BUILDER
-            .define("appliesKnockbackPredicate", "include(getSourceTags(getLastDamageSource(entity)), 'neoforge:is_environment')");
+            .define("appliesKnockbackPredicate", "include(getSourceTags(getLastDamageSource(entity)), 'minecraft:no_knockback')");
 
     public static final ModConfigSpec.BooleanValue LOG_ENABLED = BUILDER
             .define("logEnabled", false);
