@@ -7,18 +7,20 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingAttackEvent;
 
 public class LogHandler {
+    @EventBusSubscriber
     private static class LogHandlerClient {
         @SubscribeEvent
-        static void onLivingIncomingDamage(LivingIncomingDamageEvent event) {
+        static void onLivingIncomingDamage(LivingAttackEvent event) {
+            if (!Config.LOG_ENABLED.get()) return;
             var result = Util.execute(Config.LOG_FUNCTION.get(), event.getEntity(), event.getSource());
             ReHurtTime.LOGGER.info(result.toString());
         }
     }
 
-    @EventBusSubscriber
+    //@EventBusSubscriber
     private static class LogHandlerConfig {
         @SubscribeEvent
         static void onConfigLoading(ModConfigEvent.Loading event) {
