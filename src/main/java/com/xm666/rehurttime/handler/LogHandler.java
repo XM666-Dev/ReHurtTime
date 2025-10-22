@@ -3,14 +3,15 @@ package com.xm666.rehurttime.handler;
 import com.xm666.rehurttime.Config;
 import com.xm666.rehurttime.ReHurtTime;
 import com.xm666.rehurttime.util.Util;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.living.LivingAttackEvent;
 
 public class LogHandler {
-    @EventBusSubscriber
     private static class LogHandlerClient {
         @SubscribeEvent
         static void onLivingIncomingDamage(LivingAttackEvent event) {
@@ -20,8 +21,12 @@ public class LogHandler {
         }
     }
 
-    //@EventBusSubscriber
-    private static class LogHandlerConfig {
+    @Mod(value = ReHurtTime.MODID, dist = Dist.CLIENT)
+    public static class LogHandlerConfig {
+        public LogHandlerConfig(IEventBus modEventBus) {
+            modEventBus.register(LogHandlerConfig.class);
+        }
+
         @SubscribeEvent
         static void onConfigLoading(ModConfigEvent.Loading event) {
             toggle();
